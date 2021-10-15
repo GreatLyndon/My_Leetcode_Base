@@ -10,3 +10,4 @@
 4.Find Median Sorted Arrays 12/10/2021  
 5.Longest Palindrome 13/10/2021  
 6.ZigZag Conversion 14/10/2021  
+7.Reverse Integer 15/10/2021  
