@@ -6,8 +6,9 @@
 
 1.Two Sum  11/10/2021  
 2.Add Two Numbers 11/10/2021  
-3.Length Of Longest Substring 12/10/2021  
+3.Length of Longest Substring 12/10/2021  
 4.Find Median Sorted Arrays 12/10/2021  
 5.Longest Palindrome 13/10/2021  
 6.ZigZag Conversion 14/10/2021  
 7.Reverse Integer 15/10/2021  
+8.String to Integer(atoi) 16/10/2021  
