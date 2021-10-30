@@ -25,3 +25,4 @@
 19.Remove Nth Node From End of List 26/10/2021  
 20.Valid Parentheses 28/10/2021  
 21.Merge Two Sorted Lists 29/10/2021  
+22.Generate Parentheses 30/10/2021  
