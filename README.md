@@ -27,4 +27,5 @@
 21.Merge Two Sorted Lists 29/10/2021  
 22.Generate Parentheses 30/10/2021  
 23.Merge k Sorted Lists 31/10/2021  
-24.Swap Nodes in Pairs 01/11/2021 
+24.Swap Nodes in Pairs 01/11/2021  
+25.Reverse Nodes in K-Group 02/11/2021  
