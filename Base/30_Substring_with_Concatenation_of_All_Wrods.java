@@ -1,59 +1,56 @@
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
 class Solution {
     public List<Integer> findSubstring(String s, String[] words) {
+        int len = s.length();
+        int words_num = words.length;
         List<Integer> ans = new LinkedList<>();
-        int wl = words[0].length();
-        int range = s.length() - wl * words.length + 1;
-        if (wl > s.length())
+        if (len == 0 || words_num == 0)
             return ans;
-        int[] count = new int[words.length];
-        for (int i = 0; i < range; i++) {
-            int index = i;
-            String a = s.substring(index, index + wl);
-            if (hit(a, words, count)) {
-                do {
-                    index += wl;
-                    if (index > s.length() - wl)
-                        break;
-                    a = s.substring(index, index + wl);
-                } while (mark(a, words, count));
-                if (detect(count)) {
-                    ans.add(i);
-                    i += wl - 1;
+        int one_word = words[0].length();
+        HashMap<String, Integer> m1 = new HashMap<>();
+        for (String word : words) {
+            if (m1.containsKey(word))
+                m1.put(word, m1.get(word) + 1);
+            else
+                m1.put(word, 1);
+        }
+
+        for (int i = 0; i < one_word; i++) {
+            int l = i;
+            int r = i;
+            int count = 0;
+            HashMap<String, Integer> m2 = new HashMap<>();
+            while (r + one_word <= len) {
+                String tmp = s.substring(r, r + one_word);
+                r += one_word;
+                if (!m1.containsKey(tmp)) {
+                    count = 0;
+                    l = r;
+                    m2.clear();
+                } else {
+                    if (m2.containsKey(tmp))
+                        m2.put(tmp, m2.get(tmp) + 1);
+                    else
+                        m2.put(tmp, 1);
+                    count++;
+                    while (m2.get(tmp) > m1.get(tmp)) {
+                        String tmp2 = s.substring(l, l + one_word);
+                        l += one_word;
+                        if (m2.containsKey(tmp2))
+                            m2.put(tmp2, m2.get(tmp2) - 1);
+                        else
+                            m2.put(tmp2, 1);
+                        count--;
+                    }
+                    if (count == words_num)
+                        ans.add(l);
                 }
             }
-            for (int j = 0; j < count.length; j++)
-                count[j] = 0;
         }
+
         return ans;
-    }
-
-    private boolean hit(String s, String[] words, int[] count) {
-        for (int i = 0; i < words.length; i++) {
-            if (s.equals(words[i])) {
-                count[i] = 1;
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private boolean mark(String s, String[] words, int[] count) {
-        for (int i = 0; i < words.length; i++) {
-            if (count[i] == 0 && s.equals(words[i])) {
-                count[i] = 1;
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private boolean detect(int[] count) {
-        for (int i = 0; i < count.length; i++)
-            if (count[i] == 0)
-                return false;
-        return true;
     }
 }
