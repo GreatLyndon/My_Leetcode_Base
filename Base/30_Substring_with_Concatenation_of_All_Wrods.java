@@ -4,19 +4,14 @@ import java.util.List;
 
 class Solution {
     public List<Integer> findSubstring(String s, String[] words) {
-        int len = s.length();
-        int words_num = words.length;
+        int len = s.length(), words_num = words.length;
         List<Integer> ans = new LinkedList<>();
         if (len == 0 || words_num == 0)
             return ans;
         int one_word = words[0].length();
         HashMap<String, Integer> m1 = new HashMap<>();
-        for (String word : words) {
-            if (m1.containsKey(word))
-                m1.put(word, m1.get(word) + 1);
-            else
-                m1.put(word, 1);
-        }
+        for (String word : words)
+            m1.put(word, 1);
 
         for (int i = 0; i < one_word; i++) {
             int l = i;
@@ -41,8 +36,6 @@ class Solution {
                         l += one_word;
                         if (m2.containsKey(tmp2))
                             m2.put(tmp2, m2.get(tmp2) - 1);
-                        else
-                            m2.put(tmp2, 1);
                         count--;
                     }
                     if (count == words_num)
