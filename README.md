@@ -34,3 +34,4 @@
 28.Implement strStr() 05/11/2021   
 29.Divide Two Integers 06/11/2021  
 30.Substring with Concatenation of All Words 07/11/2021  
+31.Next Permutation 08/11/2021  
