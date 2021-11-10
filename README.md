@@ -36,3 +36,4 @@
 30.Substring with Concatenation of All Words 07/11/2021  
 31.Next Permutation 08/11/2021  
 32.Longest Valid Parentheses 09/11/2021  
+33.Seach in Rotated Sorted Array 10/11/2021  
