@@ -38,4 +38,5 @@
 32.Longest Valid Parentheses 09/11/2021  
 33.Seach in Rotated Sorted Array 10/11/2021  
 34.Find First and Last Position of Element in Sorted Array 11/11/2021  
-35.Search Insert Position 12/11/2021
+35.Search Insert Position 12/11/2021  
+36.Valid Sudoku 13/11/2021  
