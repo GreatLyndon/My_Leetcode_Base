@@ -40,3 +40,4 @@
 34.Find First and Last Position of Element in Sorted Array 11/11/2021  
 35.Search Insert Position 12/11/2021  
 36.Valid Sudoku 13/11/2021  
+37.Sudoku Solver 14/11/2021  
